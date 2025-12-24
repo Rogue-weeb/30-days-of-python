@@ -4,17 +4,21 @@ print()
 # Day 1 - 30 days of python
 name = input("What is your name: ")
 print('Hello', name)
-age = input("How old are you: ")
-print(age)
-if int(age) > 18:
+try:
+    age = int(input("How old are you: "))  # User enters "twenty"
+except ValueError:
+    print("Please enter a valid number")   # Error message shown
+    age = 0                                 # age is now 0 (default value)
+
+# Later in your code:
+if age > 18:  # This won't crash because age exists (it's 0)
     print("You are an adult")
 else:
-    print("You are a minor")
-print()
+    print("You are a minor")  # This will print since age = 0
 print()
 
 #i am now writing on the same line with end=''
-print('Hello again world', end='')
+print('Hello again world' , end='')
 print('this is not a new line')
 print()
 print()
