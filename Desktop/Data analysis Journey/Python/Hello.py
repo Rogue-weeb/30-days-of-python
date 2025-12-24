@@ -1,13 +1,19 @@
 print("Hello, world")
 
-name = input("Enter your name: ").strip()
+name = input("What is your name: ").strip()
 print(f"Hello, {name}")
 
-password = input( "Enter password:")
+correct_password = "1020"
 
-if password == 1020: 
-    print("correct")
-else: 
-    print('incorrect') 
+for _ in range(3): 
+    password = input("please enter your password:")
+    if password == correct_password:
+        print("correct")
+        break
+    else: 
+        print('incorrect') 
+else:
+    print("Too many tries")        
 
 
+ 
